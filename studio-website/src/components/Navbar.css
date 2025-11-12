@@ -1,0 +1,73 @@
+/* Override Bootstrap's dark navbar for a more custom look */
+.navbar.bg-dark {
+  background: linear-gradient(to bottom, #3c3c3c, #2a2a2a) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+  min-height: 80px;
+  padding: 0 3rem; /* Wider padding */
+  display: flex; /* Ensure nav is a flex container */
+  align-items: center; /* Vertically center its direct children */
+  border-bottom: 1px solid #555; /* Subtle border for texture */
+}
+
+/* Make the container take full width and spread out its content */
+.navbar .container-fluid {
+  width: 100%;
+  display: flex; /* Make container-fluid a flex container */
+  justify-content: space-between; /* Pushes logo to left, collapse to right */
+  align-items: center;
+}
+
+/* Adjust the logo size and ensure it's centered */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.navbar-brand img {
+  height: 60px;
+  transition: transform 0.2s ease-in-out;
+}
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+/* Ensure the links section (navbar-collapse) takes all space */
+.navbar-collapse {
+    flex-grow: 1; /* Allow it to grow and take available space */
+    flex-basis: auto; /* Allow it to size based on content */
+    display: flex; /* Make it a flex container */
+    justify-content: center; /* Center the nav items within the collapse area */
+}
+
+/* Style the navigation links */
+.navbar-nav {
+    width: 100%; /* Make navbar-nav take full width of its parent */
+    display: flex; /* Make it a flex container */
+    justify-content: space-around; /* Distribute items evenly with space around them */
+    align-items: center;
+}
+.navbar-nav .nav-item {
+  margin: 0; /* Remove margin, use width for spacing */
+  width: 120px; /* Fixed width for each nav item */
+  text-align: center; /* Center the text within the item */
+}
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  color: #f0f0f0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 12px 0; /* Adjust padding to be vertical only */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  transition: color 0.2s, background-color 0.2s;
+  display: block; /* Make the link fill the nav-item */
+  width: 100%;
+}
+.navbar-nav .nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
+}
+
+.navbar-nav .nav-link.active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.2); /* More prominent background for active link */
+  border-radius: 8px; /* Maintain rounded corners */
+}
