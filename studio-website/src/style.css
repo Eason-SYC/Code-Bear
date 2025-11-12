@@ -1,0 +1,24 @@
+/* Basic body styles to ensure full height and proper font rendering */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure the root element takes full height */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom CSS for hover dropdowns */
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+.navbar .dropdown .dropdown-toggle {
+  cursor: pointer;
+}
