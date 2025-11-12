@@ -1,0 +1,26 @@
+好的，非常抱歉之前的输出可能有些乱码，让您看不懂。我重新用中文解释一下如何修改这些导航项。
+
+现在，您可以通过编辑 `studio-website/src/components/NavItems` 目录下的文件来修改导航项。
+
+*   **修改“资料下载”：** 请编辑 `DownloadsNavItem.tsx` 文件。
+*   **修改“在线工具”：** 请编辑 `OnlineToolsNavItem.tsx` 文件。
+*   **修改“项目介绍”：** 请编辑 `ProjectsNavItem.tsx` 文件。
+*   **修改“团队介绍”：** 请编辑 `TeamNavItem.tsx` 文件。
+
+**举个例子：**
+
+如果您想修改“资料下载”的子菜单，比如把“子菜单1”改成“新子菜单1”，您可以打开 `studio-website/src/components/NavItems/DownloadsNavItem.tsx` 文件，找到这一行：
+
+```html
+<li><NavLink className="dropdown-item" to="/downloads/sub1">子菜单1</NavLink></li>
+```
+
+然后把它修改成：
+
+```html
+<li><NavLink className="dropdown-item" to="/downloads/sub1">新子菜单1</NavLink></li>
+```
+
+您也可以在这个文件中，通过编辑 `<ul>` 元素来添加、删除或修改下拉菜单中的链接。
+
+您希望我现在为您进行具体的修改吗？

@@ -1,3 +1,19 @@
+// =============================================================================
+// Navbar Component
+//
+// This component renders the main navigation bar.
+//
+// To modify the content of specific navigation items (e.g., "资料下载", "在线工具",
+// "项目介绍", "团队介绍"), please edit their respective component files located in:
+// `studio-website/src/components/NavItems/`
+//
+// For example:
+// - To change "资料下载", edit `DownloadsNavItem.tsx`
+// - To change "在线工具", edit `OnlineToolsNavItem.tsx`
+// - To change "项目介绍", edit `ProjectsNavItem.tsx`
+// - To change "团队介绍", edit `TeamNavItem.tsx`
+// =============================================================================
+
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import DownloadsNavItem from './NavItems/DownloadsNavItem';
