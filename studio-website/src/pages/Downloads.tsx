@@ -5,19 +5,19 @@ function Downloads() {
     {
       title: '蓝色款A1',
       description: '适用于蓝色外壳的A1型号主控板的全套资料，包含原理图、PCB文件和设计文档。',
-      imageUrl: '/bear.jpg', // Vite serves files from the public directory at the root
+      imageUrl: '../bear.jpg', // Vite serves files from the public directory at the root
       link: 'https://pan.baidu.com/s/1lAQ6POfyYnCzMSOC0vxbwA?pwd=1234'
     },
     {
       title: '白色款A1',
       description: '适用于白色外壳的A1型号主控板的全套资料，包含原理图、PCB文件和设计文档。',
-      imageUrl: '/bear.jpg',
+      imageUrl: '../bear.jpg',
       link: 'https://pan.baidu.com/s/1_lf1-fcheyLFmR6_EM72FQ?pwd=cy8p'
     },
     {
       title: '环境安装资料',
       description: '开发环境搭建指南，包含所需的驱动、第三方软件和详细的配置说明。',
-      imageUrl: '/bear.jpg',
+      imageUrl: '../bear.jpg',
       link: 'https://pan.baidu.com/s/1YA8RkoAnZuVamETE_tgkCg?pwd=pt8i'
     }
   ];
