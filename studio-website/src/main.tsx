@@ -5,9 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css'; // Keep this for global styles if needed
 import { BrowserRouter } from 'react-router-dom';
 
+const basename = import.meta.env.PROD ? '/Code-Bear' : '/';
+
 ReactDOM.createRoot(document.getElementById('app')!).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Code-Bear">
+    <BrowserRouter basename={basename}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
