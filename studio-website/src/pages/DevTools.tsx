@@ -1,5 +1,3 @@
-import React from 'react';
-
 function DevTools() {
   return (
     <div className="container my-5">
