@@ -8,18 +8,9 @@ function OnlineTools() {
         <div className="col-md-6 mb-4">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">在线烧录工具</h5>
+              <h5 className="card-title">ESP32系列在线烧录工具</h5>
               <p className="card-text">跳转到我们的在线烧录平台，方便快捷地烧录您的设备。</p>
-              <a href="https://example.com/burner" target="_blank" rel="noopener noreferrer" className="btn btn-primary">前往烧录</a>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-6 mb-4">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">数据分析工具</h5>
-              <p className="card-text">使用我们的在线数据分析工具，实时查看和分析您的项目数据。</p>
-              <a href="https://example.com/analytics" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">开始分析</a>
+              <a href="https://eason-syc.github.io/Code_Bear_Flash_Tool/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">前往烧录</a>
             </div>
           </div>
         </div>

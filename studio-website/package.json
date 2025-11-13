@@ -10,15 +10,16 @@
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
     "gh-pages": "^6.3.0",
     "typescript": "~5.9.3",
     "vite": "^5.0.0"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
+    "firebase": "^12.5.0",
     "react-router-dom": "^7.9.5"
   },
   "homepage": "https://Eason-SYC.github.io/Code-bear/"

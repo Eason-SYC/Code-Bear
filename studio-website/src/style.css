@@ -5,7 +5,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-osx-font-smoothing: grayscale;
 }
 
 /* Ensure the root element takes full height */
@@ -21,4 +21,149 @@ body {
 }
 .navbar .dropdown .dropdown-toggle {
   cursor: pointer;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; /* Higher than navbar */
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  color: #333; /* Text color for modal content */
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #555;
+}
+
+.modal-qr-code {
+  display: block;
+  margin: 1rem auto;
+  max-width: 200px;
+  height: auto;
+}
+
+/* Social media icons in footer */
+.social-icons {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.social-icon-link {
+  color: white;
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icon-link:hover {
+  transform: scale(1.15);
+  color: #c0c0c0; /* A light gray for hover */
+}
+
+.social-icon-link svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* Navbar Customizations */
+.navbar {
+  padding-top: 0 !important; /* Remove default padding */
+  padding-bottom: 0 !important; /* Remove default padding */
+  min-height: 80px; /* Set minimum height for the navbar */
+  display: flex; /* Make navbar a flex container */
+  align-items: stretch; /* Make children stretch vertically */
+}
+
+.navbar-brand {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Occupy full height of navbar */
+}
+
+.navbar-nav {
+  width: 100%; /* Ensure navbar-nav takes full width */
+  height: 100%; /* Ensure navbar-nav takes full height of its parent */
+  padding-top: 0 !important; /* Remove default padding */
+  padding-bottom: 0 !important; /* Remove default padding */
+}
+
+.navbar-nav .nav-item {
+  flex-grow: 1; /* Make nav items fill space */
+  position: relative; /* IMPORTANT: For dropdown positioning */
+  height: 100%; /* Occupy full height of navbar-nav */
+  padding-top: 0 !important; /* Remove default padding */
+  padding-bottom: 0 !important; /* Remove default padding */
+}
+
+.navbar-nav .nav-link {
+  text-align: center; /* Center text in wider links */
+  font-size: 1.1rem; /* Larger font size */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  height: 100%; /* Occupy full height of nav-item */
+  padding-top: 1rem; /* Restore vertical padding */
+  padding-bottom: 1rem; /* Restore vertical padding */
+  line-height: 1; /* Remove extra line spacing */
+}
+
+.navbar-brand img {
+  width: 80px; /* Larger logo width */
+  height: 80px; /* Larger logo height */
+}
+
+/* Dropdown Menu Beautification */
+.navbar-nav .dropdown-menu {
+  margin-top: 0; /* Remove default margin-top */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none; /* Remove top border for flush look */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+  width: 100%; /* Make dropdown full width of parent */
+  left: 0; /* Align to left edge of parent */
+}
+
+.navbar-nav .dropdown-item {
+  transition: background-color 0.3s ease, border-left-color 0.3s ease, box-shadow 0.3s ease; /* Removed transform from transition */
+  border-left: 3px solid transparent; /* Initial transparent border */
+}
+
+.navbar-nav .dropdown-item:hover {
+  background-color: #e9ecef; /* Fresher light gray background on hover */
+  /* transform: translateX(5px); */ /* REMOVED */
+  border-left-color: #1050fd; /* Darker blue highlight border on hover */
+  box-shadow: inset 3px 0 0 #1050fd; /* Subtle inner shadow for depth, matching border */
+  color: #212529; /* Ensure text color is dark for contrast on light background */
+}
+
+/* Custom container for homepage sections */
+.custom-container-80 {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
