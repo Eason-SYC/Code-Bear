@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('app')!).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Code-Bear/">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
