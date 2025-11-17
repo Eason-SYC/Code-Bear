@@ -1,24 +1,44 @@
 
 
+
+
 function Downloads() {
   const downloadItems = [
     {
-      title: '蓝色款A1',
-      description: '适用于蓝色外壳的A1型号主控板的全套资料，包含原理图、PCB文件和设计文档。',
-      imageUrl: '../bear.jpg', // Vite serves files from the public directory at the root
-      link: 'https://pan.baidu.com/s/1lAQ6POfyYnCzMSOC0vxbwA?pwd=1234'
+      title: 'Code-bear STM32系列A1开发板资料',
+      description: 'Code-bear STM32系列A1开发板的原理图、PCB、用户手册及示例代码。',
+      imageUrl: 'https://via.placeholder.com/300x200.png?text=A1+Download',
+      link: '#' // Placeholder link
     },
     {
-      title: '白色款A1',
-      description: '适用于白色外壳的A1型号主控板的全套资料，包含原理图、PCB文件和设计文档。',
-      imageUrl: '../bear.jpg',
-      link: 'https://pan.baidu.com/s/1_lf1-fcheyLFmR6_EM72FQ?pwd=cy8p'
+      title: 'Code-bear STM32系列A2开发板资料',
+      description: 'Code-bear STM32系列A2开发板的原理图、PCB、用户手册及示例代码。',
+      imageUrl: 'https://via.placeholder.com/300x200.png?text=A2+Download',
+      link: '#' // Placeholder link
     },
     {
-      title: '环境安装资料',
-      description: '开发环境搭建指南，包含所需的驱动、第三方软件和详细的配置说明。',
-      imageUrl: '../bear.jpg',
-      link: 'https://pan.baidu.com/s/1YA8RkoAnZuVamETE_tgkCg?pwd=pt8i'
+      title: 'Code-bear C1全向轮小车资料',
+      description: 'Code-bear C1全向轮小车的开源项目代码、组装教程及调试指南。',
+      imageUrl: 'https://via.placeholder.com/300x200.png?text=C1+Download',
+      link: '#' // Placeholder link
+    },
+    {
+      title: 'Code-bear D1Bear-Link资料',
+      description: 'Code-bear D1Bear-Link调试器的驱动、使用说明及固件。',
+      imageUrl: 'https://via.placeholder.com/300x200.png?text=D1+Download',
+      link: '#' // Placeholder link
+    },
+    {
+      title: 'Code-bear B1编码器TT电机资料',
+      description: 'Code-bear B1编码器TT电机的规格书、驱动示例及使用教程。',
+      imageUrl: 'https://via.placeholder.com/300x200.png?text=B1+Download',
+      link: '#' // Placeholder link
+    },
+    {
+      title: '通用开发环境安装包',
+      description: 'STM32开发环境（Keil/CubeIDE）安装包、驱动及配置教程。',
+      imageUrl: 'https://via.placeholder.com/300x200.png?text=Dev+Env+Download',
+      link: '#' // Placeholder link
     }
   ];
 

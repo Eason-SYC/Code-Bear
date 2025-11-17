@@ -19,16 +19,26 @@ import './Navbar.css';
 import DownloadsNavItem from './NavItems/DownloadsNavItem';
 import OnlineToolsNavItem from './NavItems/OnlineToolsNavItem';
 import ProjectsNavItem from './NavItems/ProjectsNavItem';
+import { images } from '../assets/images';
 import TeamNavItem from './NavItems/TeamNavItem';
+import SupportNavItem from './NavItems/SupportNavItem';
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img src="../bear.jpg" alt="源码熊电子工作室 Logo" />
+          <img src={images.bear} alt="源码熊电子工作室 Logo" />
         </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -44,7 +54,6 @@ function Navbar() {
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownBuy">
                 <li><a className="dropdown-item" href="https://shop381498461.taobao.com/" target="_blank" rel="noopener noreferrer">淘宝店铺</a></li>
-                <li><Link className="dropdown-item" to="/buy/custom">定制服务</Link></li>
                 {/* 更多购买选项 */}
               </ul>
             </li>
@@ -52,6 +61,7 @@ function Navbar() {
             <OnlineToolsNavItem />
             <ProjectsNavItem />
             <TeamNavItem />
+            <SupportNavItem />
             {/* Add more links as needed */}
           </ul>
         </div>

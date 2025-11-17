@@ -1,29 +1,156 @@
-/* Basic body styles to ensure full height and proper font rendering */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-osx-font-smoothing: grayscale;
+/* =============================================================================
+   CODE-BEAR UI OVERHAUL - 2025
+   ========================================================================== */
+
+/* -----------------------------------------------------------------------------
+   1. Design System & CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color Palette */
+  --c-bg: #f8f9fa; /* Light gray background */
+  --c-surface: #ffffff; /* Card and surface background */
+  --c-text-primary: #212529; /* Dark primary text */
+  --c-text-secondary: #6c757d; /* Lighter secondary text */
+  --c-primary: #0d6efd; /* Primary accent color (Bootstrap blue) */
+  --c-primary-rgb: 13, 110, 253;
+  --c-dark: #2c3e50; /* Deep, soft dark blue for navbar */
+  --c-border: #dee2e6; /* Standard border color */
+
+  /* Typography */
+  --font-primary: 'Poppins', sans-serif;
+
+  /* Spacing & Radius */
+  --border-radius: 0.75rem; /* Softer, larger border radius */
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 15px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 15px 25px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-speed: 0.3s;
 }
 
-/* Ensure the root element takes full height */
-#root {
+/* -----------------------------------------------------------------------------
+   2. Global Styles & Resets
+   -------------------------------------------------------------------------- */
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  /* A very subtle radial gradient to add depth */
+  background: radial-gradient(circle at top left, #ffffff, #f8f9fa 70%);
+  color: var(--c-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+#root {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* Custom CSS for hover dropdowns */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600; /* Bolder headings */
+}
+
+/* -----------------------------------------------------------------------------
+   3. Component Overrides & Enhancements
+   -------------------------------------------------------------------------- */
+
+/* --- Cards --- */
+.card {
+  border: none; /* Remove default border */
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* --- Buttons --- */
+.btn {
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Navbar --- */
+.navbar.bg-dark {
+  background-color: var(--c-dark) !important;
+}
+
+.navbar {
+  padding: 0 !important;
+  min-height: 80px;
+  display: flex;
+  align-items: stretch;
+  box-shadow: var(--shadow-md);
+}
+
+.navbar-brand img {
+  width: 80px;
+  height: 80px;
+}
+
+.navbar-nav .nav-item {
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
+}
+
+.navbar-nav .nav-link {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+  line-height: 1;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
 .navbar .dropdown:hover .dropdown-menu {
   display: block;
 }
-.navbar .dropdown .dropdown-toggle {
-  cursor: pointer;
+
+.navbar-nav .dropdown-menu {
+  margin-top: 0;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  border: none;
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  left: 0;
+  background-color: var(--c-surface);
 }
 
-/* Modal styles */
+.navbar-nav .dropdown-item {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.navbar-nav .dropdown-item:hover {
+  background-color: rgba(var(--c-primary-rgb), 0.1);
+  color: var(--c-primary);
+}
+
+
+/* --- Modals --- */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -34,17 +161,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1050; /* Higher than navbar */
+  z-index: 1050;
 }
 
 .modal-content {
-  background: white;
+  background: var(--c-surface);
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
   max-width: 500px;
   width: 90%;
   position: relative;
-  color: #333; /* Text color for modal content */
+  color: var(--c-text-primary);
 }
 
 .modal-close-btn {
@@ -56,7 +184,7 @@ body {
   border: none;
   background: none;
   cursor: pointer;
-  color: #555;
+  color: var(--c-text-secondary);
 }
 
 .modal-qr-code {
@@ -64,24 +192,24 @@ body {
   margin: 1rem auto;
   max-width: 200px;
   height: auto;
+  border-radius: var(--border-radius);
 }
 
-/* Social media icons in footer */
-.social-icons {
-  margin-top: 10px;
-  margin-bottom: 10px;
+/* --- Footer --- */
+footer.bg-dark {
+  background-color: var(--c-dark) !important;
 }
 
 .social-icon-link {
   color: white;
   margin: 0 10px;
   display: inline-block;
-  transition: transform 0.2s ease-in-out;
+  transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 .social-icon-link:hover {
   transform: scale(1.15);
-  color: #c0c0c0; /* A light gray for hover */
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .social-icon-link svg {
@@ -90,80 +218,239 @@ body {
   fill: currentColor;
 }
 
-/* Navbar Customizations */
-.navbar {
-  padding-top: 0 !important; /* Remove default padding */
-  padding-bottom: 0 !important; /* Remove default padding */
-  min-height: 80px; /* Set minimum height for the navbar */
-  display: flex; /* Make navbar a flex container */
-  align-items: stretch; /* Make children stretch vertically */
-}
-
-.navbar-brand {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center vertically */
-  height: 100%; /* Occupy full height of navbar */
-}
-
-.navbar-nav {
-  width: 100%; /* Ensure navbar-nav takes full width */
-  height: 100%; /* Ensure navbar-nav takes full height of its parent */
-  padding-top: 0 !important; /* Remove default padding */
-  padding-bottom: 0 !important; /* Remove default padding */
-}
-
-.navbar-nav .nav-item {
-  flex-grow: 1; /* Make nav items fill space */
-  position: relative; /* IMPORTANT: For dropdown positioning */
-  height: 100%; /* Occupy full height of navbar-nav */
-  padding-top: 0 !important; /* Remove default padding */
-  padding-bottom: 0 !important; /* Remove default padding */
-}
-
-.navbar-nav .nav-link {
-  text-align: center; /* Center text in wider links */
-  font-size: 1.1rem; /* Larger font size */
-  display: flex; /* Use flexbox for centering */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  height: 100%; /* Occupy full height of nav-item */
-  padding-top: 1rem; /* Restore vertical padding */
-  padding-bottom: 1rem; /* Restore vertical padding */
-  line-height: 1; /* Remove extra line spacing */
-}
-
-.navbar-brand img {
-  width: 80px; /* Larger logo width */
-  height: 80px; /* Larger logo height */
-}
-
-/* Dropdown Menu Beautification */
-.navbar-nav .dropdown-menu {
-  margin-top: 0; /* Remove default margin-top */
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-top: none; /* Remove top border for flush look */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
-  width: 100%; /* Make dropdown full width of parent */
-  left: 0; /* Align to left edge of parent */
-}
-
-.navbar-nav .dropdown-item {
-  transition: background-color 0.3s ease, border-left-color 0.3s ease, box-shadow 0.3s ease; /* Removed transform from transition */
-  border-left: 3px solid transparent; /* Initial transparent border */
-}
-
-.navbar-nav .dropdown-item:hover {
-  background-color: #e9ecef; /* Fresher light gray background on hover */
-  /* transform: translateX(5px); */ /* REMOVED */
-  border-left-color: #1050fd; /* Darker blue highlight border on hover */
-  box-shadow: inset 3px 0 0 #1050fd; /* Subtle inner shadow for depth, matching border */
-  color: #212529; /* Ensure text color is dark for contrast on light background */
-}
-
-/* Custom container for homepage sections */
+/* -----------------------------------------------------------------------------
+   4. Utility Classes
+   -------------------------------------------------------------------------- */
 .custom-container-80 {
-  max-width: 80%;
+  max-width: 95%;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* -----------------------------------------------------------------------------
+   5. New UI Components
+   -------------------------------------------------------------------------- */
+
+/* --- Hero Carousel --- */
+.hero-carousel .carousel-item {
+  height: 60vh;
+  min-height: 450px;
+}
+
+.hero-carousel .carousel-item img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-carousel .carousel-caption {
+  /* Positioning only */
+  bottom: 50%;
+  transform: translateY(50%);
+  max-width: 60%;
+  margin: auto;
+}
+
+/* Carousel Controls (Arrows) */
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next {
+  width: 5%;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-speed) ease;
+}
+
+.hero-carousel .carousel-control-prev:hover,
+.hero-carousel .carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-carousel .carousel-control-prev-icon,
+.hero-carousel .carousel-control-next-icon {
+  background-size: 60%, 60%;
+  transition: transform var(--transition-speed) ease;
+}
+
+.hero-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+.hero-carousel .carousel-control-next:hover .carousel-control-next-icon {
+  transform: scale(1.2);
+}
+
+/* Carousel Button */
+.carousel-button {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  margin-top: 20px;
+}
+
+.carousel-item.active .carousel-button {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.5s; /* Delay button animation */
+}
+
+.carousel-button:hover {
+  transform: scale(1.05);
+}
+
+/* Darker Arrow Icons */
+.hero-carousel .carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+
+.hero-carousel .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* --- Section Icon --- */
+.section-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--c-primary);
+  margin-right: 0.75rem;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* -----------------------------------------------------------------------------
+   6. Homepage Specific Sections
+   -------------------------------------------------------------------------- */
+
+/* Add alternating background colors for sections */
+#products, #services, #contact {
+  background-color: var(--c-surface);
+  padding: 4rem 0;
+}
+
+#advantages, #news {
+  background-color: var(--c-bg);
+  padding: 4rem 0;
+}
+ 
+/* --- Advantages Section --- */
+#advantages .list-group-item {
+  transition: background-color var(--transition-speed) ease;
+}
+#advantages .card {
+  background-color: var(--c-bg);
+}
+
+
+.advantage-content {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.advantage-content-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Scrolling Testimonials --- */
+.scrolling-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.scrolling-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.scrolling-wrapper:hover .scrolling-track {
+  animation-play-state: paused;
+}
+
+.scrolling-track {
+  display: flex;
+  width: calc(350px * 6); /* 3 items * 2 (for looping) * 350px width */
+}
+
+.track-1 {
+  animation: scroll-left 30s linear infinite;
+}
+
+.track-2 {
+  animation: scroll-right 40s linear infinite;
+}
+
+.track-3 {
+  animation: scroll-left 35s linear infinite;
+}
+
+.scrolling-card {
+  width: 350px;
+  flex-shrink: 0;
+  padding: 0 15px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-350px * 3)); /* 3 items * 350px width */
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(calc(-350px * 3)); /* 3 items * 350px width */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* --- Feature Cards (Under Carousel) --- */
+.feature-card {
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-align: left;
+  text-decoration: none;
+  color: var(--c-text-primary);
+  display: block;
+  height: 100%;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+.feature-card-title {
+  color: var(--c-primary); /* Dark Blue */
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feature-card-text {
+  color: var(--c-text-primary); /* Black */
+  margin-top: 0.5rem;
+  text-decoration: none;
+  display: block; /* Ensure it's a block for properties to apply */
+  transition: text-decoration var(--transition-speed) ease;
+}
+
+.feature-card:hover .feature-card-text {
+  text-decoration: underline;
+}
+
+.feature-card-arrow {
+  font-size: 1.2rem;
+  transition: transform var(--transition-speed) ease;
+}
+
+.feature-card:hover .feature-card-arrow {
+  transform: translateX(5px);
 }

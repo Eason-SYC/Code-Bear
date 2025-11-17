@@ -14,6 +14,7 @@ import Support from './pages/Support';
 import Boards from './pages/Boards';
 import ProductProjects from './pages/ProductProjects';
 import DevTools from './pages/DevTools';
+import Others from './pages/Others';
 
 function App() {
   useEffect(() => {
@@ -47,6 +48,7 @@ function App() {
           <Route path="/products/boards" element={<Boards />} />
           <Route path="/products/projects" element={<ProductProjects />} />
           <Route path="/products/devtools" element={<DevTools />} />
+          <Route path="/products/others" element={<Others />} />
         </Routes>
       </main>
       <Footer />

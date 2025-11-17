@@ -44,7 +44,7 @@
     width: 100%; /* Make navbar-nav take full width of its parent */
     display: flex; /* Make it a flex container */
     justify-content: space-around; /* Distribute items evenly with space around them */
-    align-items: center;
+    height: 90px;
 }
 .navbar-nav .nav-item {
   margin: 0; /* Remove margin, use width for spacing */
@@ -73,4 +73,47 @@
   color: #ffffff !important;
   background-color: rgba(255, 255, 255, 0.2); /* More prominent background for active link */
   border-radius: 8px; /* Maintain rounded corners */
+}
+
+/* Style for dropdown menu items */
+.dropdown-item {
+    position: relative;
+    padding-left: 1.5rem !important; /* Make space for the indicator */
+    transition: background-color 0.2s ease;
+}
+
+/* Indicator for dropdown item on hover */
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 0;
+    background-color: #0d6efd; /* A standard Bootstrap blue */
+    border-radius: 2px;
+    transition: height 0.2s ease;
+}
+
+.dropdown-item:hover::before,
+.dropdown-item:focus::before {
+    height: 60%;
+}
+
+/* Customizing dropdown menu appearance */
+.dropdown-menu {
+    background-color: #2a2a2a; /* Match navbar dark theme */
+    border: 1px solid #555;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.dropdown-item {
+    color: #f0f0f0;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
 }
