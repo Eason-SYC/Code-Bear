@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Set base path to '/' unconditionally
+  base: '/Code-Bear/', // Set base path to '/Code-Bear/' for GitHub Pages deployment
   assetsInclude: ['**/*.svg'],
   build: {
     rollupOptions: {
